@@ -1,9 +1,11 @@
 "use client";
-import { FaArrowRight } from "react-icons/fa";;
 import { useEffect, useState } from 'react';
-import { IoIosArrowForward } from "react-icons/io";
-import Navbar from "../../../components/Navbar"
-export default function ParticularStock() {
+import Navbar from "../../../../components/Navbar"
+import Dropdown from '../../../../components/DropDown';
+import ToggleButton from '../../../../components/ToggleButton';
+export default function ParticularStock({params} : any) {
+    let stockDisplay=params.id;
+    stockDisplay=stockDisplay.replace(/%20/g," ");
     const [selectedStartDate, setSelectedStartDate] = useState('');
     const handleStartDateChange = (event : any) => {
         setSelectedStartDate(event.target.value);
@@ -31,33 +33,17 @@ export default function ParticularStock() {
             </div>
             <div className="bg-green-950 px-8 py-4 rounded-md justify-center">
                 <div className="flex justify-between">
-                <h1 className="text-white text-4xl">Reliance Industries</h1>
-                <div className="flex gap-2">
-                <div className="flex flex-col">
-                <div className="text-xl bg-green-300 px-4 text-black font-bold flex justify-center items-center text-center">Start Date</div>
-                <input
-                    type="date"
-                    value={selectedStartDate}
-                    onChange={handleStartDateChange}
-                    className="appearance-none bg-green-300 py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
-                />
+                <h1 className="text-white text-4xl">{stockDisplay}</h1>
+                <div className="flex gap-6">
+                <Dropdown />
+                <div className="flex gap-4 items-center">
+                    <h1 className="text-white">Live</h1>
+                    <label className="inline-flex gap-2 items-center cursor-pointer">
+                    <input type="checkbox" value="" className="sr-only peer" />
+                    <div className="relative w-14 h-7 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                    </label>
+                    <h1 className="text-white">Algo</h1>
                 </div>
-                <div className="text-white font-extrabold justify-center items-center flex h-1/2"><FaArrowRight /></div>
-                <div className="flex flex-col">
-                <div className="bg-green-300 text-xl px-4 text-black font-bold flex justify-center items-center text-center">End Date</div>
-                <input
-                    type="date"
-                    value={selectedEndDate}
-                    onChange={handleEndDateChange}
-                    className="appearance-none bg-green-300 py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
-                />
-                </div>
-                <button className="bg-transparent rounded-md text-white font-bold py-2 px-4 border border-white shadow-md">
-                    <div className="flex justify-center items-center text-center">
-                        <span>Target Value</span>
-                        <span><IoIosArrowForward /></span>
-                    </div>
-                </button>
                 </div>
                 </div>
                 <hr className="mt-5 mb-5 mx-auto border-gray-400 border-2" />

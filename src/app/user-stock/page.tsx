@@ -1,6 +1,7 @@
 import {UserStockData} from "../../../components/UserStockData";
 import Image from "next/image";
 import Navbar from "../../../components/Navbar"
+import Link from "next/link";
 export default function MyPortfolio() {
     return (
         <div className="bg-slate-950 min-h-screen">
@@ -10,6 +11,7 @@ export default function MyPortfolio() {
             </div>
             {UserStockData.map((item, index) => (
                 index%2!==0 ? (
+                    <Link href={`/particular-stock/${item.stocks}`}>
                     <div key={index} className="flex gap-4 gap-y-4 items-center text-center justify-between bg-slate-800 py-4 text-white">
                         <div className="w-1/3">
                             <h2>{item.stocks}</h2>
@@ -43,7 +45,9 @@ export default function MyPortfolio() {
                         </div>
                         )}
                     </div>
+                    </Link>
                 ) : (
+                    <Link href={`/particular-stock/${item.stocks}`}>
                     <div key={index} className="flex gap-4 gap-y-4 items-center text-center justify-between bg-green-900 py-4 text-white">
                         <div className="w-1/3">
                             <h2>{item.stocks}</h2>
@@ -77,6 +81,7 @@ export default function MyPortfolio() {
                         </div>
                         )}
                     </div>
+                    </Link>
                 )
             ))}
             </div>
