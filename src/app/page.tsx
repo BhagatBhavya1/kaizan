@@ -10,10 +10,12 @@ import { NewsData } from "../../components/NewsData";
 import { FaArrowAltCircleRight } from "react-icons/fa";
 import { FaArrowAltCircleLeft } from "react-icons/fa";
 import Navbar from "../../components/NavbarHome";
-
+import { setMaxListeners } from "events";
 export default function Home() {
     const size=NewsData.length;
     const [i,setI]=useState(0);
+    const [il,setIl]=useState(NewsData.length - 1);
+    const [ir,setIr]=useState(1);
     const [isSmallScreen, setIsSmallScreen] = useState(false);
     useEffect(() => {
         const checkScreenSize = () => {
@@ -30,6 +32,12 @@ export default function Home() {
         console.log("go left");
         let newI=(i+1)%size;
         setI(newI);
+        let newIl=(newI-1)%size,newRi=(newI+1)%size;
+        if(newIl<0){
+            newIl+=size;
+        }
+        setIl(newIl);
+        setIr(newRi);
     }
     const goRight=()=>{
         console.log("go left");
@@ -38,6 +46,12 @@ export default function Home() {
             newI=newI + size;
         }
         setI(newI);
+        let newIl=(newI-1)%size,newRi=(newI+1)%size;
+        if(newIl<0){
+            newIl+=size;
+        }
+        setIl(newIl);
+        setIr(newRi);
     }
     return (
         <div className="flex flex-col bg-green-100 relative">
@@ -67,21 +81,30 @@ export default function Home() {
                         ))}
                     </div>
                 </div>
-
                 <div className="bg-slate-950 flex flex-col px-5">
                     <h1 className="text-2xl text-green-300 justify-center text-center items-center py-10">TRANDING TRADS</h1>
-                    <div className="p-4 bg-transparent rounded-lg border-white border-4 mb-4">
-                        <h1 className="text-center items-center text-2xl text-white font-extrabold mb-2">{NewsData[i].headline}</h1>
-                        <p className="text-sm text-white">{NewsData[i].content}</p>
+                    <div className="flex gap-x-6">
+                        <div className="p-4 bg-transparent w-1/3 mt-20 rounded-lg border-white border-4 mb-4">
+                            <h1 className="text-center items-center text-2xl text-white font-extrabold mb-2">{NewsData[il].headline}</h1>
+                            <p className="text-sm text-white">{NewsData[il].content}</p>
+                        </div>
+                        <div className="p-4 bg-transparent w-1/3 rounded-lg border-white border-4 mb-4">
+                            <h1 className="text-center items-center text-2xl text-white font-extrabold mb-2">{NewsData[i].headline}</h1>
+                            <p className="text-sm text-white">{NewsData[i].content}</p>
+                        </div>
+                        <div className="p-4 bg-transparent w-1/3 mt-20 rounded-lg border-white border-4 mb-4">
+                            <h1 className="text-center items-center text-2xl text-white font-extrabold mb-2">{NewsData[ir].headline}</h1>
+                            <p className="text-sm text-white">{NewsData[ir].content}</p>
+                        </div>
                     </div>
                     <div className="flex py-2 gap-2">
                         <div className="flex w-1/2 justify-end">
-                            <button onClick={goLeft}>
+                            <button onClick={goRight}>
                                 <span className="text-3xl text-white"><FaArrowAltCircleLeft /></span>
                             </button>
                         </div>
                         <div className="flex w-1/2 justify-between">
-                            <button onClick={goRight}>
+                            <button onClick={goLeft}>
                                 <span className="text-3xl text-white"><FaArrowAltCircleRight /></span>
                             </button>
                             <Link href="/news" className="py-2 px-2 border border-green-300">
@@ -90,17 +113,16 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <div className="bg-green-100">
+                <div className="bg-green-100 flex flex-col justify-center items-center text-center">
                     <h1 className="py-10 text-2xl justify-center text-center items-center">
                         FACES BEHIND KAIZAN
                     </h1>
                     <Image
                         src="/people.png"
                         alt="Example Image"
-                        layout="responsive"
-                        className="px-20 py-5"
-                        width={1000}
-                        height={1000}
+                        className="py-5"
+                        width={800}
+                        height={800}
                     />
                 </div>
 

@@ -26,7 +26,7 @@ export default function News() {
     }, []);
     return (
         <div className="bg-slate-900 min-h-screen py-6 flex flex-col">
-            <div className="px-3 rounded-md mb-4">
+            <div className="sticky top-1 z-10 px-3 rounded-md mb-4">
             <Navbar />
             </div>
             <div className="bg-green-950 ml-6 mr-6">

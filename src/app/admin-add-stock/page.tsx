@@ -11,7 +11,7 @@ export default function AdminAddStock() {
     };
     return (
         <div className="flex flex-col bg-slate-950 min-h-screen py-4">
-            <div className="px-3 rounded-md mb-4">
+            <div className="sticky top-1 z-10 px-3 rounded-md mb-4">
             <Navbar />
             </div>
             <div className="flex gap-2 px-4 py-2 justify-center items-center text-center">

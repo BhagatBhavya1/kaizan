@@ -2,7 +2,6 @@
 import { useEffect, useState } from 'react';
 import Navbar from "../../../../components/Navbar"
 import Dropdown from '../../../../components/DropDown';
-import ToggleButton from '../../../../components/ToggleButton';
 export default function ParticularStock({params} : any) {
     let stockDisplay=params.id;
     stockDisplay=stockDisplay.replace(/%20/g," ");
@@ -28,7 +27,7 @@ export default function ParticularStock({params} : any) {
     }, []);
     return (
         <div className="flex flex-col bg-slate-950 min-h-screen px-6 py-6 w-full">
-            <div className="px-3 rounded-md mb-4">
+            <div className="sticky top-1 z-10 px-3 rounded-md mb-4">
             <Navbar />
             </div>
             <div className="bg-green-950 px-8 py-4 rounded-md justify-center">

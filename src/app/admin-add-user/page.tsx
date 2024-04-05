@@ -11,7 +11,7 @@ import {AddUserData} from "../../../components/AddUserData";
 export default function AddAdminUser() {
     return (
         <div className="flex flex-col bg-slate-950 min-h-screen py-4">
-            <div className="px-3 rounded-md mb-4">
+            <div className="sticky top-1 z-10 px-3 rounded-md mb-4">
                 <Navbar />
             </div>
             <div className="flex justify-between px-6">
