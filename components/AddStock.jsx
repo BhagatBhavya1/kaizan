@@ -8,7 +8,9 @@ export default function AddStock() {
         <div className="w-1/2 flex flex-col border border-white rounded-md">
             <div className={`flex ${bgArray[1]} py-4 px-4`}>
                 <div className="w-1/3">
-                    <input type="checkbox" />
+                <div class="flex items-center me-4">
+                    <input id="green-checkbox" type="checkbox" value="" className="w-6 h-6 text-green-950 rounded-lg focus:ring-green-900 dark:focus:ring-green-900 focus:ring-1" />
+                </div>
                 </div>
                 <div className="w-1/3">
                     <div className="flex">
@@ -30,7 +32,9 @@ export default function AddStock() {
             {AddStockData.map((item,index)=>(
                 <div className={`flex ${bgArray[index%2]} py-4 px-4`}>
                     <div className="w-1/3">
-                        <input type="checkbox" />
+                    <div class="flex items-center me-4">
+                    <input id="green-checkbox" type="checkbox" value="" className="w-6 h-6 text-green-950 rounded-lg focus:ring-green-900 dark:focus:ring-green-900 focus:ring-1" />
+                </div>
                     </div>
                     <div className="w-1/3">
                         <h1 className="text-white">{item.stockname}</h1>
