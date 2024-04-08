@@ -82,7 +82,9 @@ export default function TargetValue() {
                 <div key={index} className="flex justify-center">
                     {item[0].map((someitem,someindex)=>(
                         <div key={someindex} className="w-1/2 flex px-6 py-6 text-blue-600 gap-2" style={{border: '1px solid white'}}>
-                            <input type="checkbox" />
+                            <div>
+                                <input id="green-checkbox" type="checkbox" value="" className="w-6 h-6 text-green-950 rounded-lg focus:ring-green-900 dark:focus:ring-green-900 focus:ring-1" />
+                            </div>
                             <h1>{someitem}</h1>
                         </div>
                     ))}

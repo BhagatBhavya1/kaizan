@@ -93,8 +93,9 @@ export default function AddAdminUser() {
                 <div className="flex gap-4 px-4">
                     <div className="flex w-11/12 gap-4 py-3">
                         <div className="w-1/6 justify-center items-center text-center border-b border-white">
-                            <input type="checkbox"
-                             />
+                        <div>
+                            <input id="green-checkbox" type="checkbox" value="" className="w-6 h-6 text-green-950 rounded-lg focus:ring-green-900 dark:focus:ring-green-900 focus:ring-1" />
+                        </div>
                         </div>
                         <div className="w-1/6 justify-center items-center text-center">
                             <h1 className="border-b border-white text-white font-bold">{item.employeeid}</h1>

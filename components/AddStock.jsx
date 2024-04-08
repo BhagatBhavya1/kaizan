@@ -5,10 +5,10 @@ import { RiDeleteBin5Line } from "react-icons/ri";
 export default function AddStock() {
     const bgArray=["bg-green-900","bg-green-950"];
     return (
-        <div className="w-1/2 flex flex-col border border-white rounded-md">
+        <div className="w-1/2 flex flex-col border border-white">
             <div className={`flex ${bgArray[1]} py-4 px-4`}>
                 <div className="w-1/3">
-                <div class="flex items-center me-4">
+                <div className="flex items-center me-4">
                     <input id="green-checkbox" type="checkbox" value="" className="w-6 h-6 text-green-950 rounded-lg focus:ring-green-900 dark:focus:ring-green-900 focus:ring-1" />
                 </div>
                 </div>
@@ -32,7 +32,7 @@ export default function AddStock() {
             {AddStockData.map((item,index)=>(
                 <div className={`flex ${bgArray[index%2]} py-4 px-4`}>
                     <div className="w-1/3">
-                    <div class="flex items-center me-4">
+                    <div className="flex items-center me-4">
                     <input id="green-checkbox" type="checkbox" value="" className="w-6 h-6 text-green-950 rounded-lg focus:ring-green-900 dark:focus:ring-green-900 focus:ring-1" />
                 </div>
                     </div>

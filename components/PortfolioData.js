@@ -1,86 +1,56 @@
 export let PortfolioData = [
     {
-        stocks : "Reliance Industries",
-        latest_price : "359.16 Rs",
-        quantity : "67",
-        state : "15.3%",
-        up : true
+        symbol : "NSE:MEDIAASSIST-EQ",
+        nq : "35",
+        t1q : "0",
+        rq : "0",
+        acp : "418",
+        ltp : "501.85",
+        days : "-11"
     },
     {
-        stocks : "HDFC bank",
-        latest_price : "119.84 Rs",
-        quantity : "23",
-        state : "3.08%",
-        up : false
+        symbol : "NSE:HDFCBANK-EQ",
+        nq : "10",
+        t1q : "0",
+        rq : "0",
+        acp : "1405",
+        ltp : "1465.10",
+        days : "+11"
     },
     {
-        stocks : "Reliance Industries",
-        latest_price : "359.16 Rs",
-        quantity : "67",
-        state : "15.3%",
-        up : true
+        symbol : "NSE:JIOFIN-EQ",
+        nq : "25",
+        t1q : "0",
+        rq : "0",
+        acp : "265",
+        ltp : "358.40",
+        days : "+11"
     },
     {
-        stocks : "HDFC bank",
-        latest_price : "119.84 Rs",
-        quantity : "23",
-        state : "3.08%",
-        up : false
+        symbol : "NSE:ITC-EQ",
+        nq : "20",
+        t1q : "0",
+        rq : "0",
+        acp : "405",
+        ltp : "427.80",
+        days : "+120"
     },
     {
-        stocks : "Reliance Industries",
-        latest_price : "359.16 Rs",
-        quantity : "67",
-        state : "15.3%",
-        up : true
+        symbol : "NSE:LICI-EQ",
+        nq : "10",
+        t1q : "0",
+        rq : "0",
+        acp : "994",
+        ltp : "945.60",
+        days : "+25"
     },
     {
-        stocks : "HDFC bank",
-        latest_price : "119.84 Rs",
-        quantity : "23",
-        state : "3.08%",
-        up : false
-    },
-    {
-        stocks : "Reliance Industries",
-        latest_price : "359.16 Rs",
-        quantity : "67",
-        state : "15.3%",
-        up : true
-    },
-    {
-        stocks : "HDFC bank",
-        latest_price : "119.84 Rs",
-        quantity : "23",
-        state : "3.08%",
-        up : false
-    },
-    {
-        stocks : "Reliance Industries",
-        latest_price : "359.16 Rs",
-        quantity : "67",
-        state : "15.3%",
-        up : true
-    },
-    {
-        stocks : "HDFC bank",
-        latest_price : "119.84 Rs",
-        quantity : "23",
-        state : "3.08%",
-        up : false
-    },
-    {
-        stocks : "Reliance Industries",
-        latest_price : "359.16 Rs",
-        quantity : "67",
-        state : "15.3%",
-        up : true
-    },
-    {
-        stocks : "HDFC bank",
-        latest_price : "119.84 Rs",
-        quantity : "23",
-        state : "3.08%",
-        up : false
+        symbol : "NSE:MUFTI-EQ",
+        nq : "53",
+        t1q : "0",
+        rq : "0",
+        acp : "280",
+        ltp : "177.90",
+        days : "+580"
     },
 ]
